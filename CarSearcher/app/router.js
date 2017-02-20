@@ -8,6 +8,8 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('cars', {path: '/cars/:car_id'});
+  this.route('rentaldetails', {path: '/rentaldetails/:rental_id'});
+  this.route('rentalcompanies', {path: '/rentalcompanies/:rental_id'});
 });
 
 export default Router;

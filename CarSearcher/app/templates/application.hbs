@@ -1,6 +1,22 @@
 <h2 id="title">Welcome to CarSearcher</h2>
 
-{{#each model as |car|}}
+<h3>Rental Detail</h3>
+{{#each rentaldetails as |rentaldetail|}}
+  PickUP:
+  <br>
+  {{rentaldetail.pickupDate}}
+  {{rentaldetail.pickupLocation}}
+
+  <br>
+  Return:
+  <br>
+  {{rentaldetail.returnLocation}}
+  {{rentaldetail.returnDate}}
+
+{{/each}}
+
+<h3>Car list</h3>
+{{#each cars as |car|}}
   {{#link-to 'cars' car.id}}{{car.title}}{{/link-to}}<br>
 {{/each}}
 <br>

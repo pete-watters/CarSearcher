@@ -23,6 +23,19 @@ module.exports = function(environment) {
     }
   };
 
+
+  ENV.contentSecurityPolicy = {
+    'default-src': '\'none\'',
+    'script-src': '\'self\' \'unsafe-eval\' \'unsafe-inline\' http://www.cartrawler.com',
+    'font-src': '\'self\' data:  ',
+    'connect-src': '\'self\' http://www.cartrawler.com',
+    'img-src': '\'self\'data: ',
+    'style-src': '\'self\' \'unsafe-inline\'',
+    'media-src': '\'self\' http://www.cartrawler.com ',
+    'child-src': 'http://www.cartrawler.com'
+  };
+
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

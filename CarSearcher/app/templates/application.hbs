@@ -1,0 +1,7 @@
+<h2 id="title">Welcome to CarSearcher</h2>
+
+{{#each model as |car|}}
+  {{#link-to 'cars' car.id}}{{car.title}}{{/link-to}}<br>
+{{/each}}
+<br>
+{{outlet}}

@@ -34,10 +34,9 @@ const populateLocalStorage = (url) => {
 };
 
 export function initialize( ) {
-  // api.json
-  // http://www.cartrawler.com/ctabe/cars.json
-  // TODO - specify 'Access-Control-Allow-Origin' header on the resource
-  console.log('instance initializer');
+  // FIXME
+  // - specify 'Access-Control-Allow-Origin' header on the resource
+  // - then it can be loaded from : http://www.cartrawler.com/ctabe/cars.json
   populateLocalStorage('api.json');
 }
 

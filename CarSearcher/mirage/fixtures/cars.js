@@ -92,12 +92,13 @@ console.log(reducedVehiclesArray);
 //   console.log(obj);
 //   return obj;
 // });
-var test = [];
-reducedVehiclesArray.forEach(function(item, index) {
-  test.push(item);
-  console.log(item + index);
-});
-console.log(test);
+
+// var test = [];
+// reducedVehiclesArray.forEach(function(item, index) {
+//   test.push(item);
+//   console.log(item + index);
+// });
+// console.log(test);
 
 export default [
   {id: 1, title: 'Check out the first title', text: 'Test123 title1', dog: 'woof'},

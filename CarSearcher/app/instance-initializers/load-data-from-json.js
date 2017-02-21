@@ -6,7 +6,7 @@ const loadDataFromLocalJSON = (url) => {
 
     xhr.open('GET', url);
     xhr.onreadystatechange = handler;
-    xhr.responseType = 'json';
+    xhr.responseType = 'text';
     xhr.setRequestHeader('Accept', 'application/json');
     xhr.send();
 
@@ -37,7 +37,7 @@ export function initialize( ) {
   // api.json
   // http://www.cartrawler.com/ctabe/cars.json
   // TODO - specify 'Access-Control-Allow-Origin' header on the resource
-
+  console.log('instance initializer');
   populateLocalStorage('api.json');
 }
 

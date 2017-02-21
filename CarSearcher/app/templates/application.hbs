@@ -1,40 +1,74 @@
 <h2 id="title">Welcome to CarSearcher</h2>
 
-<h3>Rental Detail</h3>
-{{#each rentaldetails as |rentaldetail|}}
-  PickUP:
-  <br>
-  {{rentaldetail.pickupDate}}
-  {{rentaldetail.pickupLocation}}
 
-  <br>
-  Return:
-  <br>
-  {{rentaldetail.returnLocation}}
-  {{rentaldetail.returnDate}}
+<section class="cs-section-header">
+    <article class="cs-article-legend">
+            <fieldset class="cs-fieldset">
+              {{#each rentaldetails as |rentaldetail|}}
+                  <section class="cs-fieldset-section-pickupInfo">
+                      <p>
+                          <label for="cs-pickupDetails">Pickup</label>
+                          <span id="cs-pickupDetails">{{rentaldetail.pickupLocation}} - {{rentaldetail.pickupDate}}</span>
+                      </p>
+                  </section>
+                  <section class="cs-fieldset-section-returnInfo">
+                      <p>
+                          <label for="cs-returnDetails">Return</label>
+                          <span id="cs-returnDetails">{{rentaldetail.returnLocation}} - {{rentaldetail.returnDate}}</span>
+                      </p>
+                  </section>
 
-{{/each}}
+              {{/each}}
+            </fieldset>
+    </article>
+    <article class="cs-article-rentalDetails">
+        <fieldset class="cs-fieldset">
+              {{outlet}}
+        </fieldset>
+    </article>
+</section>
 
-<h3>Car list</h3>
 
-{{#each cars as |car|}}
-  {{#link-to 'cars' car.id}}
-    <img src="{{car.vehicleSpecPictureURL}}" width="40px" height="25px" alt="{{car.vehicleSpecDescription}}">
-      {{car.vendorName}}
-      {{car.vehicleSpecDescription}}
-      {{car.vehicleSpecPassengerQuantity}}
-      {{car.vehicleSpecDoorCount}}
-      {{car.vehicleSpecFuelType}}
-      {{car.vehicleSpecDriveType}}
-      {{car.vehicleSpecAirConditionInd}}
-      {{car.vehicleSpecDriveType}}
-      {{car.vehicleSpecTransmissionType}}
-      {{car.totalChargeRateTotalAmount}}
-      {{car.totalChargeEstimatedTotalAmount}}
-      {{car.status}}
- {{/link-to}}<br>
-{{/each}}
-<br>
-{{outlet}}
+<section class="cs-section-main">
 
+    <article class="cs-article-vehicleList">
+        <table cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+                <th class="cs-table-th-vehicleDescription">Description</th>
+                <th class="cs-table-th-vehicleDetails">Details</th>
+                <th>Status</th>
+                <th>Vendor</th>
+                <th>Cost</th>
+                <th>Currency</th>
+            </tr>
+            {{#each cars as |car|}}
+              {{#link-to 'cars' car.id tagName="tr"}}
+                  <td>
+                    {{car.vehicleSpecDescription}}
+                    <img src="{{car.vehicleSpecPictureURL}}" class="cs-table-td-vehicleImage" alt="{{car.vehicleSpecDescription}}">
+                  </td>
+                  <td>
+                      <ol>
+                          <li><b>Passengers:</b> {{car.vehicleSpecPassengerQuantity}}</li>
+                          <li><b>Doors:</b> {{car.vehicleSpecDoorCount}}</li>
+                          <li><b>Fuel:</b> {{car.vehicleSpecFuelType}}</li>
+                          <li><b>Drive Type:</b> {{car.vehicleSpecDriveType}}</li>
+                          <li><b>AirCon:</b> {{car.vehicleSpecAirConditionInd}} </li>
+                          <li><b>Transmission:</b> {{car.vehicleSpecTransmissionType}} </li>
+                      </ol>
+                  </td>
+                  <td>{{car.status}}</td>
+                  <td>{{car.vendorName}}</td>
+                  <td>{{car.totalChargeRateTotalAmount}}</td>
+                  <td>{{car.totalChargeEstimatedTotalAmount}}</td>
+              {{/link-to}}
+            {{/each}}
+            </tbody>
+        </table>
+    </article>
+
+
+
+</section>
 

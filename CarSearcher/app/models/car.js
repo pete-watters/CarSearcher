@@ -6,7 +6,7 @@ export default DS.Model.extend({
   vendorName: DS.attr('string'),
   totalChargeCurrencyCode: DS.attr('string'),
   totalChargeEstimatedTotalAmount: DS.attr('string'),
-  totalChargeRateTotalAmount: DS.attr('string'),
+  totalChargeRateTotalAmount: DS.attr('number'),
   vehicleSpecAirConditionInd: DS.attr('string'),
   vehicleSpecCode: DS.attr('string'),
   vehicleSpecCodeContext: DS.attr('string'),

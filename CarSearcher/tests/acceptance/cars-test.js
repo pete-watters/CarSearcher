@@ -3,10 +3,10 @@ import moduleForAcceptance from 'car-searcher/tests/helpers/module-for-acceptanc
 
 moduleForAcceptance('Acceptance | cars');
 
-test('visiting /cars', function(assert) {
-  visit('/cars');
+test('visiting landing page', function(assert) {
+  visit('/');
 
   andThen(function() {
-    assert.equal(currentURL(), '/cars');
+    assert.equal(currentURL(), '/');
   });
 });

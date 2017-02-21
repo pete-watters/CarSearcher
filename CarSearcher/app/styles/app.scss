@@ -1,0 +1,71 @@
+$font-stack-system: Helvetica, sans-serif; // needed to get around issues with bitter
+//
+@import "external/normalize";
+@import "external/bourbon";
+@import "external/neat";
+@import "external/base/base"; // bourbon bitters
+
+body {
+  //@include outer-container;
+  margin: 2.5%;
+}
+
+fieldset {
+  background: #f7f7f7;
+  border: 1px solid #DDD;
+  margin: 0 0 .75em;
+  padding: 1.5em;
+}
+
+.cs-section-header, .cs-section-main{
+  @include grid-container;
+}
+.cs-section-main{
+  max-height: 600px;
+  overflow: scroll;
+}
+
+.cs-article-vehicleList{
+  @include grid-column(12);
+}
+.cs-article-legend{
+  @include grid-column(5);
+}
+
+.cs-fieldset-section-pickupInfo, .cs-fieldset-section-returnInfo{
+  @include grid-column(6);
+}
+
+.cs-fieldset-fullDetail{
+  @include grid-column(3);
+}
+
+
+.cs-section-rentalDetail{
+  @include grid-container;
+
+}
+.cs-article-rentalDetail{
+  @include grid-column(3);
+}
+
+// customise test output
+#ember-testing-container{
+  display: none;
+}
+
+.navigation-wrapper{
+  margin: 0 2%;
+}
+
+.images-wrapper{
+  background-position: inherit;
+}
+
+.vertical-tabs-container .vertical-tabs{
+  height: 100%;
+}
+
+.hide{
+  display:none;
+}

@@ -16,8 +16,17 @@
 {{/each}}
 
 <h3>Car list</h3>
+
 {{#each cars as |car|}}
-  {{#link-to 'cars' car.id}}{{car.vendorName}}{{/link-to}}<br>
+  {{car.vehicleSpecDescription}}
+  {{car.totalChargeEstimatedTotalAmount}}
+  {{car.vehicleSpecPassengerQuantity}}
+  {{car.vehicleSpecDoorCount}}
+  {{car.vehicleSpecDriveType}}
+  {{car.vehicleSpecFuelType}}
+  {{#link-to 'cars' car.id}}Details{{/link-to}}<br>
 {{/each}}
 <br>
 {{outlet}}
+
+

@@ -18,13 +18,21 @@
 <h3>Car list</h3>
 
 {{#each cars as |car|}}
-  {{car.vehicleSpecDescription}}
-  {{car.totalChargeEstimatedTotalAmount}}
-  {{car.vehicleSpecPassengerQuantity}}
-  {{car.vehicleSpecDoorCount}}
-  {{car.vehicleSpecDriveType}}
-  {{car.vehicleSpecFuelType}}
-  {{#link-to 'cars' car.id}}Details{{/link-to}}<br>
+  {{#link-to 'cars' car.id}}
+    <img src="{{car.vehicleSpecPictureURL}}" width="40px" height="25px" alt="{{car.vehicleSpecDescription}}">
+      {{car.vendorName}}
+      {{car.vehicleSpecDescription}}
+      {{car.vehicleSpecPassengerQuantity}}
+      {{car.vehicleSpecDoorCount}}
+      {{car.vehicleSpecFuelType}}
+      {{car.vehicleSpecDriveType}}
+      {{car.vehicleSpecAirConditionInd}}
+      {{car.vehicleSpecDriveType}}
+      {{car.vehicleSpecTransmissionType}}
+      {{car.totalChargeRateTotalAmount}}
+      {{car.totalChargeEstimatedTotalAmount}}
+      {{car.status}}
+ {{/link-to}}<br>
 {{/each}}
 <br>
 {{outlet}}

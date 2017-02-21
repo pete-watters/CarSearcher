@@ -17,7 +17,7 @@
 
 <h3>Car list</h3>
 {{#each cars as |car|}}
-  {{#link-to 'cars' car.id}}{{car.title}}{{/link-to}}<br>
+  {{#link-to 'cars' car.id}}{{car.vendorName}}{{/link-to}}<br>
 {{/each}}
 <br>
 {{outlet}}

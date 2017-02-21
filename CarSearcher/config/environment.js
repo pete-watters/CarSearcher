@@ -29,7 +29,7 @@ module.exports = function(environment) {
     'script-src': '\'self\' \'unsafe-eval\' \'unsafe-inline\' http://www.cartrawler.com',
     'font-src': '\'self\' data:  ',
     'connect-src': '\'self\' http://www.cartrawler.com',
-    'img-src': '\'self\'data: ',
+    'img-src': '\'self\'data: https://cdn.cartrawler.com/',
     'style-src': '\'self\' \'unsafe-inline\'',
     'media-src': '\'self\' http://www.cartrawler.com ',
     'child-src': 'http://www.cartrawler.com'
